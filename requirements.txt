@@ -5,3 +5,4 @@ matplotlib>=3.7
 seaborn>=0.12
 joblib>=1.3
 pyarrow>=12.0   # for Parquet (optional; project falls back to CSV if missing)
+streamlit>=1.30
