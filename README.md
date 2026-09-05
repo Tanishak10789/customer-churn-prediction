@@ -172,27 +172,6 @@ churn-prediction/
 
 ---
 
-## Key design decisions (interview talking points)
-
-- **Why F1 / recall, not accuracy?** The data is 73/27 imbalanced — a model that
-  always predicts "no churn" scores 73% accuracy and is useless. Recall is
-  prioritised because a missed churner is costlier than a false alarm.
-- **Why a Pipeline?** Every learned step (impute, scale, encode) fits on the
-  training split only, so the test score is honest and the whole model deploys as
-  a single file.
-- **Why class weights instead of resampling?** Simple, effective, and keeps the
-  pipeline clean — `class_weight="balanced"` re-weights the minority class during
-  training.
-
-## Possible improvements
-
-- Threshold tuning — optimise the 0.5 cut-off for the real business cost of a
-  false positive vs a false negative.
-- Hyperparameter search (`GridSearchCV` / `RandomizedSearchCV`) inside the pipeline.
-- Try XGBoost / LightGBM; add SHAP values for per-customer explanations.
-- Out-of-fold target encoding for high-cardinality categoricals.
-
----
 
 ## Author
 
