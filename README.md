@@ -13,7 +13,7 @@ comparison → evaluation → inference.**
 
 ---
 
-## What this project does (in plain English)
+## What this project does 
 
 A phone/internet company loses money whenever a customer cancels, and keeping an
 existing customer is cheaper than winning a new one. This project looks at a
